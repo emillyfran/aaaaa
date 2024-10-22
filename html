@@ -1,0 +1,36 @@
+// Modificação da função geraRecomendacao
+function geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura, gostaDeDrama) {
+    if (idade >= 10) {
+        if (idade >= 14) {
+            return "O menino que descobriu o vento";
+        } else {
+            if (idade >= 12) {
+                if (gostaDeFantasia || gostaDeAventura) {
+                    return "Homem-Aranha: no aranhaverso";
+                } else if (gostaDeDrama) {
+                    return "A vida é bela";
+                } else {
+                    return "Ladrões de bicicleta";
+                }
+            } else {
+                if (gostaDeFantasia) {
+                    return "As aventuras de Pi";
+                } else {
+                    return "Depois da chuva";
+                }
+            }
+        }
+    }
+}
+
+// Adicionando checkbox na função setup
+function setup() {
+    createCanvas(800, 400);
+    createElement("h2", "Recomendador de filmes");
+    createSpan("Sua idade:");
+    campoIdade = createInput("5");
+    campoFantasia = createCheckbox("Gosta de Fantasia?");
+    campoAventura = createCheckbox("Gosta de aventura?");
+    campoDrama = createCheckbox("Gosta de drama?");  // nova checkbox
+}
+
